@@ -1,0 +1,21 @@
+#encoding=utf8
+-
+  user:
+    username: zhangsan
+    password: '123456'
+  msg: "用户名或密码错误"
+-
+  user:
+    "username": "admin "
+    "password": "1111111111"
+  msg: 2
+-
+  user:
+    "username": "admin"
+    "password": ""
+  msg: 3
+-
+  user:
+      "username": "admin"
+      "password": "123456"
+  msg: success

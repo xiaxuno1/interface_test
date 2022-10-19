@@ -1,0 +1,6 @@
+#encoding=utf8
+-
+  user:
+      "username": "admin"
+      "password": "123456"
+  msg: success

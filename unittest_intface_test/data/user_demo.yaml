@@ -1,0 +1,52 @@
+#encoding=utf8
+#测试登陆接口功能,
+#冒号后面要有空格；
+#-表示起始
+#数组 arr: [北京， 上海， 广州]
+# 显示指定类型 string: !!str helloworld
+#引用
+-
+  lisi: &lisi
+    age: 18
+    from: sichuan
+
+  info:
+    id: 123456789
+    <<: *lisi
+
+#单文件多配置
+-
+  name:
+    profiles:
+      active: admin #指定使用哪个模块
+  name:
+    profiles: administrator
+  login:
+    username: administrator
+    passwoed: '123456'
+  name:
+    profiles: admin
+  login:
+    username: admin
+    password: '123456'
+
+-
+  user:
+    username: zhangsan
+    password: '123456'
+-
+  user:
+    "username": "admin " #字符串可使用或者不使用引号，使用双引号会转义字符串中的特殊字符如：\n
+    "passwoed": "1111111111"
+  msg:
+    111111
+-
+  user:
+    "username": "admin"
+    "passwoed": ""
+  msg: 111111
+-
+  user:
+      "username": "admin"
+      "passwoed": "123456"
+  msg: SUCESS
