@@ -1,6 +1,6 @@
 # --------------------------------------------------
+# coding=gbk
 # !/usr/bin/python
-# -*- coding: utf-8 -*-
 # PN: interface_test
 # FN: mock_server
 # Author: xiaxu
@@ -12,20 +12,22 @@ from flask import request,jsonify
 
 
 app = Flask(__name__)
-app.config['JSONIFY_MIMETYPE'] ="application/json;charset=utf-8"
-@app.route("api/login",methods=["POST"])
+#app.config['JSONIFY_MIMETYPE'] ="application/json;charset=utf-8"
+@app.route("/api/login",methods=["POST","GET"])
 def login():
     """登陆接口"""
     # 调试信息，打印请求方法
     print(request.method)
+    #获取内容格式信息
+    print(request.headers.get("content-type"))
     # 获取请求数据，将数据变为字典
-    data = request.get_json()
+    data = request.args.to_dict()
     # 调试信息，打印请求的数据
     print(data)
     print(type(data))
 
     # 定义用户名和密码变量，从data中取值
-    username = data['username']
+    username = data['user']
     pwd = data['password']
     """
         测试场景设计

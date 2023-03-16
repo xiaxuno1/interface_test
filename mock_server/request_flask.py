@@ -13,7 +13,7 @@ from flask import Flask,request
 
 
 app = Flask(__name__)
-@app.route("/",methods=["GET","POST"])
+@app.route("/api/login",methods=["GET","POST"])
 #视图函数
 def request_flask():
     # a = request.get_data() #bytes，原来格式接收数据

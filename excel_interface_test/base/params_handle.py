@@ -8,7 +8,7 @@
 # Description:定义了参数处理的方式
 # ---------------------------------------------------
 """
-根据设计：处理分为读入数据和写入数据，接收的为字典
+根据设计：处理分为读入数据和写入数据，接收的为字典；读数据和写数据都存储在param表中
     读入数据：以read作为key，传入value为读取字段，如：token、userid;
         读数据的表定义为params,key-value格式，读数据重新组合为参数
         获取数据后，删除read键值对
@@ -49,7 +49,7 @@ class ParamsHandle():
 
     def params_write(self,params_dict,write_content = None):
         """
-        写入关联数据
+        写入关联数据,将此行得到的某些数据内容写入数据关联write字段，
         :param params_dict:
         :param write_content:
         :return:

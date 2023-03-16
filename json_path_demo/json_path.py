@@ -58,9 +58,9 @@ data={ "store": {
 """
 import jsonpath
 
-# bicycle = jsonpath.jsonpath(data,'$.store.bicycle')#获取bicycle的内容
-# print(bicycle,type(bicycle))
-# print(bicycle[0]['price'])
+bicycle = jsonpath.jsonpath(data,'$.store.bicycle')#获取bicycle的内容
+print(bicycle,type(bicycle))
+print(bicycle[0]['price'])
 # print(jsonpath.jsonpath(data,'$.store..price'))#获取所有price内容
 # print(jsonpath.jsonpath(data,'$.store.*')) #获取子节点下的所有内容
 # print(jsonpath.jsonpath(data,'$.store.book[1].author')) #获取book下第二个类容的auther类容
