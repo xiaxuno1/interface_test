@@ -47,7 +47,7 @@ def test_excel_testcases(line):
     if headers is not None:
         data['headers'] = param.params_read(eval(headers))
     if params is not None:
-        data[params] = param.params_read(eval(params)) #读取param中关联的数据
+        data[params_type] = param.params_read(eval(params)) #读取param中关联的数据
     if len(data) == 0:  # 考虑data键值对为空的情况
         res = req(url)
     if len(data)== 0: #考虑data键值对为空的情况
@@ -63,10 +63,10 @@ def test_excel_testcases(line):
             #校验结果
             verify_result = api.get_res(assert_param,res.text)  #如果没有正确响应则会出错，如响应400
             #校验结果写入单元格
-            assert verify_result == assert_result
+            assert assert_result == verify_result  #这里如果返回的类型不相等可能会出现异常，如'sky'==201
     except Exception as e:
-        with allure.step("获取校验结果失败"):
-            assert False ,'没有获取到校验字段，请看断言内容'
+        with allure.step("断言失败"):
+            assert False ,'断言失败，请检查断言内容'
 
 if __name__ == '__main__':
     #excel_testcases()
