@@ -71,5 +71,5 @@ def test_excel_testcases(line):
 if __name__ == '__main__':
     #excel_testcases()
     pytest.main(['-s', 'test_excel_pytest_allure.py',
-                 '--alluredir', './pytest_results', '--clean-alluredir'])
+                 '--alluredir', './pytest_results', '--clean-alluredir','--junitxml=outputs/result.xml'])
     os.system('allure generate --clean ./allure_report pytest_results')
