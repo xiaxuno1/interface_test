@@ -6,9 +6,7 @@ pipeline{
     stages {  //阶段
         stage('build test') { //子阶段
             steps { //步骤
-                bat '''pytest -s excel_interface_test/test_case/test_excel_pytest_allure.py
-                --alluredir excel_interface_test/test_case/pytest_results
-                --clean-alluredir --junitxml=excel_interface_test/test_case/outputs/result.xml'''
+                bat '''pytest -s excel_interface_test/test_case/test_excel_pytest_allure.py --alluredir excel_interface_test/test_case/pytest_results --clean-alluredir --junitxml=excel_interface_test/test_case/outputs/result.xml'''
     // One or more steps need to be included within the steps block.
              
                     }
