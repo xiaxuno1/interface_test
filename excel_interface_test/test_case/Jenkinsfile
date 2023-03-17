@@ -1,9 +1,9 @@
 pipeline{
     agent any  //创建节点
     stages {  //阶段
-        stage('') { //子阶段
+        stage('build flask') { //子阶段
             steps { //步骤
-                bat ''
+                bat 'python -m ../../mock_server/request_flask.py '
     // One or more steps need to be included within the steps block.
   }
 }
