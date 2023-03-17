@@ -3,7 +3,7 @@ pipeline{
     stages {  //阶段
         stage('build flask') { //子阶段
             steps { //步骤
-                bat 'python mock_server/request_flask.py '
+                bat 'python excel_interface_test/test.py'
     // One or more steps need to be included within the steps block.
   }
 }
