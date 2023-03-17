@@ -12,7 +12,7 @@ pipeline{
                     }
                 }
             }
-    post post {
+    post {
          always {
              junit 'excel_interface_test/test_case/outputs/result.xml'  //实现junit.xml
              emailext body: '''<html>
