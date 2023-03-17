@@ -1,12 +1,13 @@
 pipeline{
     agent any  //创建节点
     environment{
-        JOBNAME = '流水线演示'
+        JOBNAME = '流水线演示'  //仅在Jenkinsfile有效的env
                 }
     stages {  //阶段
-        stage('build flask') { //子阶段
+        stage('build test') { //子阶段
             steps { //步骤
-                bat 'python excel_interface_test/test.py'
+                bat 'pytest -s test_excel_pytest_allure.py --alluredir ./pytest_results --clean-alluredir --junitxml=outputs/result.xml'
+                bat 'allure generate --clean ./allure_report pytest_results'
     // One or more steps need to be included within the steps block.
              
                     }
