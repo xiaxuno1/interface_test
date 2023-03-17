@@ -1,11 +1,49 @@
 pipeline{
     agent any  //创建节点
+    environment{
+        JOBNAME = '流水线演示'
+                }
     stages {  //阶段
         stage('build flask') { //子阶段
             steps { //步骤
                 bat 'python excel_interface_test/test.py'
     // One or more steps need to be included within the steps block.
-  }
-}
-}
+             
+                    }
+                }
+            }
+    post post {
+         always {
+             junit 'excel_interface_test/test_case/outputs/result.xml'  //实现junit.xml
+             emailext body: '''<html>
+                <head>
+                <h1><center><font>以下是Jenkins自动发送的邮件，请勿回复！</font><center></h1>
+                <h3><center><font color="red">allure报告在线查看or下载allure-report.zip用firefox离线查看，测试用例见附件</font><center></h3>
+                </head>
+                <body>
+                <br>
+                <hr>
+                <br>
+                项目描述：${JOB_DESCRIPTION}<br>
+                <br>
+                <hr>
+                项目名称：$PROJECT_NAME<br>
+                 构建编号：$BUILD_NUMBER<br>
+                 构建状态：$BUILD_STATUS<br>
+                 触发原因：${CAUSE}<br>
+                 测试总数：${TEST_COUNTS,var="pass"}<br>
+                 测试通过：${TEST_COUNTS,var="pass"}</font><br>
+                 测试失败：<font color="red">${TEST_COUNTS,var="fail"}<br>
+                 构建地址：<A HREF="${BUILD_URL}">${BUILD_URL}</A><br>
+                 构建日志地址：<A HREF="${BUILD_URL}console">${BUILD_URL}console</A><br>
+                 系统allure测试报告：<A HREF="${PROJECT_URL}${BUILD_NUMBER}/allure">${PROJECT_URL}${BUILD_NUMBER}/allure</a><br>
+                 <hr>
+                 ${JELLY_SCRIPT}
+                </body>
+            </html>''', 
+                subject: 'pipeline_demo', 
+                to: 'xiaxuno1@163.com'
+    // One or more steps need to be included within each condition's block.
+                }
+               }
 }
