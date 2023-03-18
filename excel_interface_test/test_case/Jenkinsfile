@@ -17,25 +17,25 @@ pipeline{
              junit 'excel_interface_test/test_case/outputs/result.xml'  //实现junit.xml
              emailext body: '''<html>
                 <head>
-                <h1><center><font>Jenkins Auto Sent，DO NOT REPLEY！</font><center></h1>
+                <h1><center><font>Jenkins Auto Sent,DO NOT REPLEY!</font><center></h1>
                 <h3><center><font color="red">allure online or allure-report.zip check</font><center></h3>
                 </head>
                 <body>
                 <br>
                 <hr>
                 <br>
-                Pro Des：${JOB_DESCRIPTION}<br>
+                Pro Des:${JOB_DESCRIPTION}<br>
                 <br>
                 <hr>
-                Pro Name：$PROJECT_NAME<br>
-                Pro Num：$BUILD_NUMBER<br>
-                Pro Sta：$BUILD_STATUS<br>
-                Trigger Casue：${CAUSE}<br>
-                Test Total：${TEST_COUNTS,var="pass"}<br>
-                Test Pass：${TEST_COUNTS,var="pass"}</font><br>
-                Test Fail：<font color="red">${TEST_COUNTS,var="fail"}<br>
-                Built Addr：<A HREF="${BUILD_URL}">${BUILD_URL}</A><br>
-                log Addr：<A HREF="${BUILD_URL}console">${BUILD_URL}console</A><br>
+                Pro Name:$PROJECT_NAME<br>
+                Pro Num:$BUILD_NUMBER<br>
+                Pro Sta:$BUILD_STATUS<br>
+                Trigger Casue:${CAUSE}<br>
+                Test Total:${TEST_COUNTS,var="pass"}<br>
+                Test Pass:${TEST_COUNTS,var="pass"}</font><br>
+                Test Fail:<font color="red">${TEST_COUNTS,var="fail"}<br>
+                Built Addr:<A HREF="${BUILD_URL}">${BUILD_URL}</A><br>
+                log Addr:<A HREF="${BUILD_URL}console">${BUILD_URL}console</A><br>
                 allure：<A HREF="${PROJECT_URL}${BUILD_NUMBER}/allure">${PROJECT_URL}${BUILD_NUMBER}/allure</a><br>
                  <hr>
                  ${JELLY_SCRIPT}
