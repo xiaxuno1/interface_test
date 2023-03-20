@@ -48,8 +48,6 @@ def test_excel_testcases(line):
         data['headers'] = param.params_read(eval(headers))
     if params is not None:
         data[params_type] = param.params_read(eval(params)) #读取param中关联的数据
-    if len(data) == 0:  # 考虑data键值对为空的情况
-        res = req(url)
     if len(data)== 0: #考虑data键值对为空的情况
         with allure.step("传递接口测试数据"):
             res = req(url)
