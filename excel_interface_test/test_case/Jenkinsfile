@@ -1,7 +1,7 @@
 pipeline{
     agent any  //创建节点
     environment{
-        JOBNAME = '流水线演示'  //仅在Jenkinsfile有效的env
+        JOBNAME = 'piepline demo'  //仅在Jenkinsfile有效的env
                 }
     stages {  //阶段
         stage('build test') { //子阶段
@@ -17,26 +17,26 @@ pipeline{
              junit 'excel_interface_test/test_case/outputs/result.xml'  //实现junit.xml
              emailext body: '''<html>
                 <head>
-                <h1><center><font>以下是Jenkins自动发送的邮件，请勿回复！</font><center></h1>
-                <h3><center><font color="red">allure报告在线查看or下载allure-report.zip用firefox离线查看，测试用例见附件</font><center></h3>
+                <h1><center><font>Jenkins Auto Sent,DO NOT REPLEY!</font><center></h1>
+                <h3><center><font color="red">allure online or allure-report.zip check</font><center></h3>
                 </head>
                 <body>
                 <br>
                 <hr>
                 <br>
-                项目描述：${JOB_DESCRIPTION}<br>
+                Pro Des:${JOB_DESCRIPTION}<br>
                 <br>
                 <hr>
-                项目名称：$PROJECT_NAME<br>
-                 构建编号：$BUILD_NUMBER<br>
-                 构建状态：$BUILD_STATUS<br>
-                 触发原因：${CAUSE}<br>
-                 测试总数：${TEST_COUNTS,var="pass"}<br>
-                 测试通过：${TEST_COUNTS,var="pass"}</font><br>
-                 测试失败：<font color="red">${TEST_COUNTS,var="fail"}<br>
-                 构建地址：<A HREF="${BUILD_URL}">${BUILD_URL}</A><br>
-                 构建日志地址：<A HREF="${BUILD_URL}console">${BUILD_URL}console</A><br>
-                 系统allure测试报告：<A HREF="${PROJECT_URL}${BUILD_NUMBER}/allure">${PROJECT_URL}${BUILD_NUMBER}/allure</a><br>
+                Pro Name:$PROJECT_NAME<br>
+                Pro Num:$BUILD_NUMBER<br>
+                Pro Sta:$BUILD_STATUS<br>
+                Trigger Casue:${CAUSE}<br>
+                Test Total:${TEST_COUNTS,var="pass"}<br>
+                Test Pass:${TEST_COUNTS,var="pass"}</font><br>
+                Test Fail:<font color="red">${TEST_COUNTS,var="fail"}<br>
+                Built Addr:<A HREF="${BUILD_URL}">${BUILD_URL}</A><br>
+                log Addr:<A HREF="${BUILD_URL}console">${BUILD_URL}console</A><br>
+                allure：<A HREF="${PROJECT_URL}${BUILD_NUMBER}/allure">${PROJECT_URL}${BUILD_NUMBER}/allure</a><br>
                  <hr>
                  ${JELLY_SCRIPT}
                 </body>
