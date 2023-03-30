@@ -28,7 +28,7 @@ class ApiCase():
             'password': user_data['user']['password']
         }
         res = api.post(url = url,json = userinfo)
-        with allure.step('接口返回信息校验及打印'):
+        with allure.step('接口返回信息校验及打印'):/
             #print('/api/login登陆请求返回信息')
             #print(res.text)
             msg = api.get_res('msg',res.text)
