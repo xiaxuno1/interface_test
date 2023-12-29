@@ -26,3 +26,8 @@ excel_interface_test/test_case/pytest_results
 /pytest_interface_test/allure_result/
 /pytest_interface_test_V2/allure-report/
 /pytest_interface_test_V2/allure_result/
+*.pyc
+*.json
+*.csv
+*.css
+*.js

@@ -1,0 +1,19 @@
+# Logfile created on 2022-10-26 11:49:05 +0800 by logger.rb/47272
+I, [2022-10-26T11:49:06.874980 #15592]  INFO -- : Running example 'Verifying a pact between consumer and provider01 Given test service for pact with POST /provider returns a response which has status code 200'
+I, [2022-10-26T11:49:06.893034 #15592]  INFO -- : Sending POST request to path: "/provider" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"test service"}]}, see debug logs for body
+D, [2022-10-26T11:49:06.898986 #15592] DEBUG -- : body :
+I, [2022-10-26T11:49:08.514423 #15592]  INFO -- : Received response with status: 200, headers: {"Server"=>"Werkzeug/2.2.2 Python/3.9.13", "Date"=>"Wed, 26 Oct 2022 03:49:08 GMT", "Content-Type"=>"application/json", "Content-Length"=>"26", "Connection"=>"close"}, see debug logs for body
+D, [2022-10-26T11:49:08.519353 #15592] DEBUG -- : body: {"age":18,"name":"xuzhu"}
+
+I, [2022-10-26T11:50:19.440549 #12228]  INFO -- : Running example 'Verifying a pact between consumer and provider01 Given test service for pact with POST /provider returns a response which has status code 200'
+I, [2022-10-26T11:50:19.440912 #12228]  INFO -- : Sending POST request to path: "/provider" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"test service"}]}, see debug logs for body
+D, [2022-10-26T11:50:19.440912 #12228] DEBUG -- : body :
+I, [2022-10-26T11:50:19.487583 #12228]  INFO -- : Received response with status: 200, headers: {"Server"=>"Werkzeug/2.2.2 Python/3.9.13", "Date"=>"Wed, 26 Oct 2022 03:50:19 GMT", "Content-Type"=>"application/json", "Content-Length"=>"26", "Connection"=>"close"}, see debug logs for body
+D, [2022-10-26T11:50:19.487583 #12228] DEBUG -- : body: {"age":18,"name":"xuzhu"}
+
+I, [2022-10-26T14:48:38.211706 #10136]  INFO -- : Running example 'Verifying a pact between consumer and provider01 Given test service for pact with POST /provider returns a response which has status code 200'
+I, [2022-10-26T14:48:38.230723 #10136]  INFO -- : Sending POST request to path: "/provider" with headers: {"X_PACT_PROVIDER_STATES"=>[{"name"=>"test service"}]}, see debug logs for body
+D, [2022-10-26T14:48:38.230723 #10136] DEBUG -- : body :
+I, [2022-10-26T14:48:38.309708 #10136]  INFO -- : Received response with status: 200, headers: {"Server"=>"Werkzeug/2.2.2 Python/3.9.13", "Date"=>"Wed, 26 Oct 2022 06:48:38 GMT", "Content-Type"=>"application/json", "Content-Length"=>"26", "Connection"=>"close"}, see debug logs for body
+D, [2022-10-26T14:48:38.309708 #10136] DEBUG -- : body: {"age":18,"name":"xuzhu"}
+
